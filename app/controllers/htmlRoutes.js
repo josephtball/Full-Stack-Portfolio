@@ -6,7 +6,7 @@ router.get ('/', function(req, res) {
 	const hbsObj = {
 		title: 'Joseph Ball - Full Stack Developer'
 	};
-	res.render('home', hbsObj);
+	res.render('landing', hbsObj);
 });
 
 export default router;
