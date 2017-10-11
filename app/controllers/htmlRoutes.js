@@ -9,4 +9,11 @@ router.get ('/', function(req, res) {
 	res.render('landing', hbsObj);
 });
 
+router.get ('/about', function(req, res) {
+	const hbsObj = {
+		title: 'Joseph Ball - Full Stack Developer'
+	};
+	res.render('about', hbsObj);
+});
+
 export default router;
