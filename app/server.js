@@ -2,10 +2,11 @@ import express from 'express';
 import exphbs from 'express-handlebars';
 import logger from 'morgan';
 import path from 'path';
+import mongoose from 'mongoose';
 
 const port = process.env.PORT || 8080;
 
-let app = express();
+const app = express();
 
 // morgan logger
 app.use(logger('dev'));
@@ -19,10 +20,17 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
 
-
 // express static folder
-console.log(path.join(__dirname, '/public'))
-app.use('/static', express.static(path.join(__dirname, '/public')))
+app.use('/static', express.static(path.join(__dirname, '/public')));
+
+// setup Mongoose connection to database
+mongoose.Promise = Promise;
+mongoose.connect('mongodb://localhost/portfolio_db', {
+	useMongoClient: true
+});
+const db = mongoose.connection;
+db.on('error', (error) => console.log('Mongoose error: ', error));
+db.once('open', () => console.log('Mongoose connection successful.'));
 
 // routes
 import htmlRoutes from './controllers/htmlRoutes.js';

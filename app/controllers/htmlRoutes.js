@@ -2,14 +2,14 @@ import express from 'express';
 
 let router = express.Router();
 
-router.get ('/', function(req, res) {
+router.get('/', (req, res) => {
 	const hbsObj = {
 		title: 'Joseph Ball - Full Stack Developer'
 	};
 	res.render('landing', hbsObj);
 });
 
-router.get ('/about', function(req, res) {
+router.get('/about', (req, res) => {
 	const hbsObj = {
 		about: true,
 		title: 'Joseph Ball - Full Stack Developer'
@@ -17,7 +17,7 @@ router.get ('/about', function(req, res) {
 	res.render('about', hbsObj);
 });
 
-router.get ('/portfolio', function(req, res) {
+router.get('/portfolio', (req, res) => {
 	const hbsObj = {
 		portfolio: true,
 		title: 'Joseph Ball - Full Stack Developer'
@@ -25,7 +25,7 @@ router.get ('/portfolio', function(req, res) {
 	res.render('portfolio', hbsObj);
 });
 
-router.get ('/contact', function(req, res) {
+router.get('/contact', (req, res) => {
 	const hbsObj = {
 		contact: true,
 		title: 'Joseph Ball - Full Stack Developer'
