@@ -33,4 +33,11 @@ router.get('/contact', (req, res) => {
 	res.render('contact', hbsObj);
 });
 
+router.get('/admin-login', (req, res) => {
+	const hbsObj = {
+		title: 'Joseph Ball - Full Stack Developer'
+	};
+	res.render('adminLogin', hbsObj);
+});
+
 export default router;
