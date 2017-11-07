@@ -1,12 +1,100 @@
-{{> navbar}}
+{{!-- {{> navbar}} --}}
 
-<div class="container" id="content">
-	<main>
-		<div class="row">
-			<h1 class="seven columns">About Me</h1>
-			<img class="five columns" src="static/images/browser_code.png">
-		</div>
-	</main>	
-</div>
+<section class="hero">
+	<h1>Welcome to My<span>Portfolio</span></h1>
+</section>
+
+<section class="welcome">
+	<div class="welcome-left">
+		<img src="static/images/welcome-1.jpg">
+	</div>
+	<div class="welcome-middle">
+		<h2>Making it Happen</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id ultrices quam, in consectetur metus.</p>
+	</div>
+	<div class="welcome-right">
+		<img src="static/images/welcome-2.jpg">
+	</div>
+</section>
+
+<section class="about-me">
+	<img class="about-image" src="static/images/about-img.jpg">
+	<h1 class="about-title">Joseph Ball</h1>
+	<h2 class="about-subtitle">Full Stack Developer</h2>
+	<div class="about-text">
+		<p>My name is Joseph Ball and I am a certified full stack web developer from Rutgers University. I have a background in electrical work and construction management but I was unsatisfied with that career path. I have made the change to web development because I have always had an interest in tech, coding, and creating new things. I also enjoy the challenge of learning something new.</p>
+		<p>When I'm not studying web development I like to go mountain biking, which is probably my newest hobby. I usually ride trails at Allaire, Holmdel, and Hartshorne Park with some friends. It's a good way to make exercise fun. During the winter months I go skiing. I have been skiing for as long as I can remember and try to go as often as possible since the season is rather short.</p>
+	</div>
+</section>
+
+<section class="portfolio">
+	<h1>My Work</h1>
+	<div class="portfolio-items">
+		
+		{{!-- featured item --}}
+		<figure class="portfolio-item featured">
+			<img src="static/images/portfolio-1.jpg">
+			<figcaption>
+				<h2 class="portfolio-title">Project Name</h2>
+				<p class="portfolio-desc">A short description should go right here</p>
+				<a class="portfolio-link" href="#">More Info</a>
+			</figcaption>
+		</figure>
+		
+		{{!-- other items --}}
+		<figure class="portfolio-item">
+			<img src="static/images/portfolio-2.jpg">
+			<figcaption>
+				<h2 class="portfolio-title">Project Name</h2>
+				<p class="portfolio-desc">A short description should go right here</p>
+				<a class="portfolio-link" href="#">More Info</a>
+			</figcaption>
+		</figure>
+
+		<figure class="portfolio-item">
+			<img src="static/images/portfolio-3.jpg">
+			<figcaption>
+				<h2 class="portfolio-title">Project Name</h2>
+				<p class="portfolio-desc">A short description should go right here</p>
+				<a class="portfolio-link" href="#">More Info</a>
+			</figcaption>
+		</figure>
+
+		<figure class="portfolio-item">
+			<img src="static/images/portfolio-4.jpg">
+			<figcaption>
+				<h2 class="portfolio-title">Project Name</h2>
+				<p class="portfolio-desc">A short description should go right here</p>
+				<a class="portfolio-link" href="#">More Info</a>
+			</figcaption>
+		</figure>
+
+		<figure class="portfolio-item">
+			<img src="static/images/portfolio-5.jpg">
+			<figcaption>
+				<h2 class="portfolio-title">Project Name</h2>
+				<p class="portfolio-desc">A short description should go right here</p>
+				<a class="portfolio-link" href="#">More Info</a>
+			</figcaption>
+		</figure>
+
+	</div>
+</section>
+
+<section class="contact">
+	<h1>Contact Me</h1>
+	<form action="">
+		<label class="name">Name: 
+			<input type="text" name="name" id="name">
+		</label>
+		<label class="email">Email: 
+			<input type="email" name="email" id="email">
+		</label>
+		<label class="message">Message: 
+			<textarea name="message" id="message"></textarea>
+		</label>
+		<button type="submit">Send</button>
+	</form>
+</section>
 
 {{> footer}}
