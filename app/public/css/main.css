@@ -386,7 +386,7 @@ h2 {
   font-weight: 400; }
 
 .hero {
-  background-image: url(./images/hero.jpg);
+  background-image: url(../images/hero.jpeg);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -445,8 +445,185 @@ h2 {
   flex-direction: column;
   justify-content: center; }
 
-.intro-left img,
-.intro-right img {
+.welcome-left img,
+.welcome-right img {
   object-fit: cover;
   min-height: 100%;
-  min-width: 100%; }
+  min-width: 100%;
+  display: block; }
+
+.about-me {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 50em;
+  margin-top: 5em;
+  margin-bottom: 5em; }
+  .about-me::after {
+    content: '';
+    display: block;
+    clear: both; }
+
+.about-img {
+  max-height: 25em; }
+  @media (min-width: 40em) {
+    .about-img {
+      float: left;
+      margin-right: 1em; } }
+
+.about-title {
+  margin-left: 0.25em;
+  margin-bottom: 0.25em; }
+
+.about-subtitle {
+  margin: 0.5em 0; }
+
+@supports (display: grid) {
+  .about-me {
+    display: grid;
+    grid-template-columns: [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end]; }
+  .about-img {
+    grid-column: port / img;
+    grid-row: 1 / 2; }
+  .about-title {
+    grid-column: name / port;
+    grid-row: 1 / 2;
+    align-self: end; }
+  .about-subtitle,
+  .about-text {
+    grid-column: port / port; } }
+
+.portfolio {
+  text-align: center;
+  background: #E8E9EB;
+  padding: 5em 0; }
+
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 75em; }
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 20rem; }
+  .portfolio-item img {
+    display: block;
+    width: 100%; }
+  .portfolio-item figcaption {
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 1em;
+    background: rgba(3, 175, 194, 0.75);
+    color: #FFFFFF;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: top ease-in-out 250ms; }
+  .portfolio-item:hover figcaption,
+  .portfolio-item:focus figcaption {
+    top: 0; }
+
+.portfolio-title {
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  margin-bottom: auto; }
+
+.portfolio-desc {
+  display: none; }
+
+.portfolio-link {
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-bottom: 3px solid #FFFFFF;
+  align-self: flex-start; }
+  .portfolio-link::after {
+    content: '';
+    display: inline-block;
+    height: 0.8em;
+    width: 0.8em;
+    margin-left: 0.5em; }
+
+@supports (display: grid) {
+  .portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); }
+  .portfolio-item.featured {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2; }
+  .featured figcaption {
+    padding: 2em; }
+  .featured .portfolio-title {
+    font-size: 5rem; }
+  .featured .portfolio-desc {
+    display: block; } }
+
+.contact {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 50em;
+  padding: 5em 0; }
+  .contact h1 {
+    text-align: center; }
+
+form {
+  display: flex;
+  flex-direction: column; }
+
+label {
+  display: block;
+  margin-top: 1em;
+  color: #606060; }
+
+input,
+textarea {
+  box-sizing: border-box;
+  display: block;
+  padding: 0.75em;
+  width: 100%;
+  background: #fbfbfc;
+  border: 1px solid #E8E9EB;
+  font-size: 1.2rem; }
+
+.button {
+  display: inline-block;
+  width: auto;
+  margin-top: 1em;
+  margin-left: auto;
+  background: #03AFC2;
+  border: none;
+  font-size: 2rem;
+  letter-spacing: 0.15em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Six Caps", sans-serif;
+  font-weight: 400;
+  padding: 0.5em 1.5em; }
+
+footer {
+  background: #223843;
+  padding: 5em 0;
+  text-align: center; }
+
+.social-icons {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 15em;
+  display: flex;
+  justify-content: space-between;
+  margin: 1.75em auto; }
+
+.copyright::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 4em auto;
+  width: 25%; }
