@@ -1,0 +1,41 @@
+.hero {
+	background-image: url(../images/hero.png);
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+
+	h1 {
+		font-size: 1.5rem;
+		font-weight: 400;
+		color: $blue;
+		line-height: 1.5;
+		text-align: center;
+
+		span {
+			@include sans-serif($fs: 5.5rem, $color: $accent)
+			display: block;
+			margin-right: -0.15em;
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			width: 40%;
+			height: 1px;
+			background: $blue;
+		}
+
+		&::before {
+			margin: 0 auto 2em;
+		}
+
+		&::after {
+			margin: 2em auto 0;
+		}
+	}
+}
