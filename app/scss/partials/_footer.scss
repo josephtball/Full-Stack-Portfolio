@@ -1,6 +1,6 @@
 footer {
 	background: $blue;
-	padding: 5em 0;
+	padding: 5em 0 2em;
 	text-align: center;
 }
 
@@ -16,7 +16,9 @@ footer {
 	// height: 25%;
 }
 
-.copyright {
+.admin-link {
+	color: $gray;
+
 	&::before {
 		content: '';
 		display: block;
