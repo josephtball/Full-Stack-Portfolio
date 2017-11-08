@@ -30,9 +30,10 @@
 	justify-content: center;
 }
 
-.intro-left img,
-.intro-right img {
+.welcome-left img,
+.welcome-right img {
 	object-fit: cover;
 	min-height: 100%;
 	min-width: 100%;
+	display: block;
 }
