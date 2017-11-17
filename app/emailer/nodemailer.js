@@ -9,16 +9,18 @@ const transporter = nodemailer.createTransport({
 	}
 });
 
-const sendEmail = (message) => {
+const sendEmail = (data) => {
 	const mailOptions = {
 		to: 'jball321@live.com',
 		subject: 'Message from Portfolio',
-		text: message
+		text: 'From: '+data.name+'\n'+
+			'Email: '+data.email+'\n'+
+			'Message:\n'+data.message,
 	};
 
 	transporter.sendMail(mailOptions, (error, info) => {
 		if(error) return error;
-
+		
 		return info.response;
 	});
 }

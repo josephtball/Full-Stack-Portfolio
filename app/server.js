@@ -1,6 +1,7 @@
 import express from 'express';
 import exphbs from 'express-handlebars';
 import logger from 'morgan';
+import bodyParser from 'body-parser'
 import path from 'path';
 import mongoose from 'mongoose';
 
@@ -10,6 +11,12 @@ const app = express();
 
 // morgan logger
 app.use(logger('dev'));
+
+// body parser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 // handlebars
 app.engine('handlebars', exphbs({

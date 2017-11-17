@@ -362,7 +362,8 @@ body {
   font-family: "Merriweather", serif;
   font-size: 0.875rem;
   line-height: 1.6;
-  background: #FFFFFF; }
+  background: #FFFFFF;
+  overflow-x: hidden; }
 
 img {
   max-width: 100%; }
@@ -440,8 +441,9 @@ nav ul {
   background: #03AFC2; }
 
 nav li {
-  border-bottom: 1px solid #223843;
   text-align: center; }
+  nav li:not(:last-of-type) {
+    border-bottom: 1px solid #223843; }
 
 nav li:hover {
   background: rgba(34, 56, 67, 0.5); }
@@ -460,11 +462,13 @@ nav a {
   line-height: 0;
   width: 100%; }
 
-.nav-is-open nav {
-  transform: translateX(0); }
-
-.nav-is-open .all-content {
-  transform: translateX(85%); }
+.nav-is-open {
+  height: 100vh;
+  overflow-y: hidden; }
+  .nav-is-open nav {
+    transform: translateX(0); }
+  .nav-is-open .all-content {
+    transform: translateX(85%); }
 
 .all-content {
   transition: transform ease-out 250ms; }
@@ -592,7 +596,8 @@ nav a {
 .portfolio-item {
   position: relative;
   overflow: hidden;
-  flex: 1 1 20rem; }
+  flex: 1 1 20rem;
+  margin: 0.25em; }
   .portfolio-item img {
     display: block;
     width: 100%; }
@@ -638,7 +643,8 @@ nav a {
 @supports (display: grid) {
   .portfolio-items {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); }
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5em; }
   .portfolio-item.featured {
     grid-column: 1 / span 2;
     grid-row: 1 / span 2; }
