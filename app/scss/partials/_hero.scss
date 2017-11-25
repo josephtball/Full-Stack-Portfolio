@@ -15,10 +15,18 @@
 		line-height: 1.5;
 		text-align: center;
 
+		@include mq {
+			font-size: 3vw;
+		}
+
 		span {
 			@include sans-serif($fs: 5.5rem, $color: $accent)
 			display: block;
 			margin-right: -0.15em;
+
+			@include mq {
+				font-size: 10vw;
+			}
 		}
 
 		&::before,
