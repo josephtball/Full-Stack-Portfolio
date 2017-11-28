@@ -362,7 +362,11 @@ body {
   font-family: "Merriweather", serif;
   font-size: 0.875rem;
   line-height: 1.6;
-  background: #FFFFFF; }
+  background: #FFFFFF;
+  overflow-x: hidden; }
+  @media (min-width: 50em) {
+    body {
+      font-size: 1.125rem; } }
 
 img {
   max-width: 100%; }
@@ -375,6 +379,9 @@ h1 {
   color: #03AFC2;
   line-height: 1;
   font-size: 3.123rem; }
+  @media (min-width: 50em) {
+    h1 {
+      font-size: 4.25rem; } }
 
 h2 {
   font-size: 2rem;
@@ -384,6 +391,9 @@ h2 {
   line-height: 1;
   font-family: "Six Caps", sans-serif;
   font-weight: 400; }
+  @media (min-width: 50em) {
+    h2 {
+      font-size: 3rem; } }
 
 /* hamburger */
 .menu-toggle {
@@ -440,8 +450,9 @@ nav ul {
   background: #03AFC2; }
 
 nav li {
-  border-bottom: 1px solid #223843;
   text-align: center; }
+  nav li:not(:last-of-type) {
+    border-bottom: 1px solid #223843; }
 
 nav li:hover {
   background: rgba(34, 56, 67, 0.5); }
@@ -460,11 +471,13 @@ nav a {
   line-height: 0;
   width: 100%; }
 
-.nav-is-open nav {
-  transform: translateX(0); }
-
-.nav-is-open .all-content {
-  transform: translateX(85%); }
+.nav-is-open {
+  height: 100vh;
+  overflow-y: hidden; }
+  .nav-is-open nav {
+    transform: translateX(0); }
+  .nav-is-open .all-content {
+    transform: translateX(85%); }
 
 .all-content {
   transition: transform ease-out 250ms; }
@@ -484,6 +497,9 @@ nav a {
     color: #223843;
     line-height: 1.5;
     text-align: center; }
+    @media (min-width: 50em) {
+      .hero h1 {
+        font-size: 3vw; } }
     .hero h1 span {
       font-size: 5.5rem;
       letter-spacing: 0.15em;
@@ -494,6 +510,9 @@ nav a {
       font-weight: 400;
       display: block;
       margin-right: -0.15em; }
+      @media (min-width: 50em) {
+        .hero h1 span {
+          font-size: 10vw; } }
     .hero h1::before, .hero h1::after {
       content: '';
       display: block;
@@ -565,17 +584,29 @@ nav a {
 @supports (display: grid) {
   .about-me {
     display: grid;
-    grid-template-columns: [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end]; }
+    grid-template-columns: [port-start] minmax(6em, 1fr) [name-start] minmax(6em, 1fr) [img-end] 2fr [port-end];
+    grid-column-gap: 0.5em; }
   .about-img {
     grid-column: port / img;
     grid-row: 1 / 2; }
+    @media (min-width: 50em) {
+      .about-img {
+        grid-row: 1 / 4; } }
   .about-title {
     grid-column: name / port;
     grid-row: 1 / 2;
     align-self: end; }
   .about-subtitle,
   .about-text {
-    grid-column: port / port; } }
+    grid-column: port / port; }
+    @media (min-width: 50em) {
+      .about-subtitle,
+      .about-text {
+        grid-column: port-end; } }
+  .about-subtitle {
+    grid-row: 2 / 3; }
+  .about-text {
+    grid-row: 3 / 4; } }
 
 .portfolio {
   text-align: center;
@@ -592,7 +623,8 @@ nav a {
 .portfolio-item {
   position: relative;
   overflow: hidden;
-  flex: 1 1 20rem; }
+  flex: 1 1 20rem;
+  margin: 0.25em; }
   .portfolio-item img {
     display: block;
     width: 100%; }
@@ -624,7 +656,7 @@ nav a {
 .portfolio-link {
   color: #FFFFFF;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   text-decoration: none;
   border-bottom: 3px solid #FFFFFF;
   align-self: flex-start; }
@@ -639,6 +671,9 @@ nav a {
   .portfolio-items {
     display: grid;
     grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 50em) {
+      .portfolio-items {
+        grid-template-columns: repeat(4, 1fr); } }
   .portfolio-item.featured {
     grid-column: 1 / span 2;
     grid-row: 1 / span 2; }
@@ -657,9 +692,29 @@ nav a {
   .contact h1 {
     text-align: center; }
 
+.inline-link {
+  color: #A7A7A7; }
+
 form {
   display: flex;
   flex-direction: column; }
+  @supports (display: grid) {
+    @media (min-width: 50em) {
+      form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 1em;
+        grid-template-areas: 'name	email' 'message	message' '	.	button'; }
+        form .name {
+          grid-area: name; }
+        form .email {
+          grid-area: email; }
+        form .message {
+          grid-area: message; }
+          form .message textarea {
+            height: 10em; }
+        form .button {
+          grid-area: button; } } }
 
 label {
   display: block;

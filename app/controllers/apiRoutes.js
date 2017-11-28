@@ -1,13 +1,13 @@
 import express from 'express';
+import sendEmail from '../emailer/nodemailer.js';
 
 const router = express.Router();
 
-router.get ('/', function(req, res) {
-	// const hbsObj = {
-	// 	title: 'Joseph Ball - Full Stack Developer'
-	// };
-	// res.render('home', hbsObj);
-	res.send('apiRoute')
+router.post('/send-email', (req, res) => {
+	console.log(req.body);
+	
+	sendEmail(req.body);
+	res.sendStatus(200);
 });
 
 export default router;
