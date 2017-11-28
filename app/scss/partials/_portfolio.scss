@@ -55,7 +55,7 @@
 .portfolio-link {
 	color: $white;
 	font-weight: 600;
-	font-size: 1.1rem;
+	font-size: 0.8rem;
 	text-decoration: none;
 	border-bottom: 3px solid $white;
 	align-self: flex-start;
@@ -73,7 +73,6 @@
 	.portfolio-items {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		grid-gap: 0.5em;
 
 		@include mq {
 			grid-template-columns: repeat(4, 1fr);

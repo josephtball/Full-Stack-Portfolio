@@ -656,7 +656,7 @@ nav a {
 .portfolio-link {
   color: #FFFFFF;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   text-decoration: none;
   border-bottom: 3px solid #FFFFFF;
   align-self: flex-start; }
@@ -670,8 +670,7 @@ nav a {
 @supports (display: grid) {
   .portfolio-items {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0.5em; }
+    grid-template-columns: repeat(2, 1fr); }
     @media (min-width: 50em) {
       .portfolio-items {
         grid-template-columns: repeat(4, 1fr); } }
@@ -692,6 +691,9 @@ nav a {
   padding: 5em 0; }
   .contact h1 {
     text-align: center; }
+
+.inline-link {
+  color: #A7A7A7; }
 
 form {
   display: flex;

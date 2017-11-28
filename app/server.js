@@ -31,13 +31,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.use('/static', express.static(path.join(__dirname, '/public')));
 
 // setup Mongoose connection to database
-mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/portfolio_db', {
-	useMongoClient: true
-});
-const db = mongoose.connection;
-db.on('error', (error) => console.log('Mongoose error: ', error));
-db.once('open', () => console.log('Mongoose connection successful.'));
+// mongoose.Promise = Promise;
+// mongoose.connect('mongodb://localhost/portfolio_db', {
+// 	useMongoClient: true
+// });
+// const db = mongoose.connection;
+// db.on('error', (error) => console.log('Mongoose error: ', error));
+// db.once('open', () => console.log('Mongoose connection successful.'));
 
 // routes
 import htmlRoutes from './controllers/htmlRoutes.js';
