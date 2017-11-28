@@ -4,7 +4,9 @@
   "description": "Personal Portfolio",
   "main": "./app/server.js",
   "scripts": {
-    "start": "nodemon --watch app --exec babel-node -- app/server.js",
+    "start": "node ./dist/server.js",
+    "dev-start": "nodemon --watch app --exec babel-node -- app/server.js",
+    "build": "babel app --out-dir dist --ignore *.scss,*.css,*.handlebars,*.jpg,*.jpeg,*.svg,*png",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
