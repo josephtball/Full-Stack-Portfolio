@@ -4,7 +4,7 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@import url("https://fonts.googleapis.com/css?family=Merriweather:400,900|Open+Sans:400,400i,600,600i,700,700i,800,800i|Six+Caps");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,900|Open+Sans:400,600,700,800|Six+Caps:");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -398,26 +398,27 @@ h2 {
 /* hamburger */
 .menu-toggle {
   padding: 1em;
-  position: absolute;
+  position: fixed;
   top: 0.45em;
-  left: 0.3em; }
-
-.hamburger-top,
-.hamburger-middle,
-.hamburger-bottom {
-  content: '';
-  display: block;
-  background-color: #223843;
-  height: 3px;
-  width: 1.75em;
-  border-radius: 3px;
-  transition: all ease-in-out 500ms; }
-
-.hamburger-top {
-  transform: translateY(-3px); }
-
-.hamburger-bottom {
-  transform: translateY(3px); }
+  left: 0.3em;
+  z-index: 999; }
+  @media (min-width: 50em) {
+    .menu-toggle {
+      display: none; } }
+  .menu-toggle .hamburger-top,
+  .menu-toggle .hamburger-middle,
+  .menu-toggle .hamburger-bottom {
+    content: '';
+    display: block;
+    background-color: #223843;
+    height: 3px;
+    width: 1.75em;
+    border-radius: 3px;
+    transition: all ease-in-out 500ms; }
+  .menu-toggle .hamburger-top {
+    transform: translateY(-3px); }
+  .menu-toggle .hamburger-bottom {
+    transform: translateY(3px); }
 
 .open .hamburger-top {
   transform: translateY(3px) rotate(45deg); }
@@ -429,58 +430,92 @@ h2 {
   transform: translateY(-3px) rotate(-45deg); }
 
 /* navbar */
-nav {
+.site-nav {
   position: fixed;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 15%;
-  z-index: 999;
-  transform: translateX(-100%);
-  transition: transform ease-out 250ms; }
+  background: #03AFC2;
+  z-index: 998;
+  overflow: hidden;
+  clip-path: circle(0 at top left);
+  transition: clip-path ease-out 750ms; }
+  @media (min-width: 50em) {
+    .site-nav {
+      clip-path: none;
+      width: 100vw;
+      background: #E8E9EB;
+      box-shadow: 0 0 6px 1px #606060; } }
+  .site-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+    width: 90vw; }
+    @media (min-width: 50em) {
+      .site-nav ul {
+        flex-direction: row;
+        height: 3em;
+        width: 90%;
+        margin: 0 auto;
+        max-width: 75em; } }
+  .site-nav li {
+    text-align: center; }
+    .site-nav li:not(:last-of-type) {
+      border-bottom: 1px solid #223843; }
+      @media (min-width: 50em) {
+        .site-nav li:not(:last-of-type) {
+          border-bottom: none; } }
+    .site-nav li:hover, .site-nav li:focus {
+      background: rgba(34, 56, 67, 0.5); }
+      @media (min-width: 50em) {
+        .site-nav li:hover, .site-nav li:focus {
+          background: none; } }
+    @media (min-width: 50em) {
+      .site-nav li {
+        display: inline;
+        width: auto; } }
+  .site-nav a {
+    font-size: 4rem;
+    letter-spacing: 0.15em;
+    color: #223843;
+    text-transform: uppercase;
+    line-height: 1;
+    font-family: "Six Caps", sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    display: block;
+    padding: calc(100vh/8) 0;
+    line-height: 0; }
+    @media (min-width: 50em) {
+      .site-nav a {
+        font-size: 1.2rem;
+        line-height: 2.8em;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 600;
+        padding: 0; }
+        .site-nav a:hover {
+          color: #03AFC2; } }
 
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: space-around;
-  background: #03AFC2; }
-
-nav li {
-  text-align: center; }
-  nav li:not(:last-of-type) {
-    border-bottom: 1px solid #223843; }
-
-nav li:hover {
-  background: rgba(34, 56, 67, 0.5); }
-
-nav a {
-  display: inline-block;
-  font-size: 4rem;
-  letter-spacing: 0.15em;
-  color: #223843;
-  text-transform: uppercase;
-  line-height: 1;
-  font-family: "Six Caps", sans-serif;
-  font-weight: 400;
-  text-decoration: none;
-  padding: calc(100vh/8) 0;
-  line-height: 0;
-  width: 100%; }
+@media (min-width: 50em) {
+  .active a {
+    color: #03AFC2; } }
 
 .nav-is-open {
   height: 100vh;
   overflow-y: hidden; }
-  .nav-is-open nav {
-    transform: translateX(0); }
-  .nav-is-open .all-content {
-    transform: translateX(85%); }
+  @media (min-width: 50em) {
+    .nav-is-open {
+      overflow-y: auto; } }
 
-.all-content {
-  transition: transform ease-out 250ms; }
+.site-nav-open {
+  clip-path: circle(100%); }
+
+@media (min-width: 50em) {
+  .all-content {
+    margin-top: 3em; } }
 
 .hero {
   background-image: url(../images/hero.png);
@@ -560,7 +595,7 @@ nav a {
   width: 90%;
   margin: 0 auto;
   max-width: 50em;
-  margin-top: 5em;
+  padding-top: 5em;
   margin-bottom: 5em; }
   .about-me::after {
     content: '';
@@ -704,7 +739,7 @@ form {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 1em;
-        grid-template-areas: 'name	email' 'message	message' '	.	button'; }
+        grid-template-areas: 'name	email' 'message	message' '	.	button'; }
         form .name {
           grid-area: name; }
         form .email {
