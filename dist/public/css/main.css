@@ -420,7 +420,6 @@ h2 {
   .menu-toggle .hamburger-bottom {
     transform: translateY(3px); }
 
-
 .open .hamburger-top {
   transform: translateY(3px) rotate(45deg); }
 
@@ -782,6 +781,11 @@ textarea {
   font-family: "Six Caps", sans-serif;
   font-weight: 400;
   padding: 0.5em 1.5em; }
+
+#contact-loader {
+  display: none;
+  height: 1em;
+  opacity: 0.5; }
 
 footer {
   background: #223843;
