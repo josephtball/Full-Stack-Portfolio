@@ -2,11 +2,11 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Personal Portfolio",
-  "main": "./app/server.js",
+  "main": "./server/index.js",
   "scripts": {
     "start": "node ./server/index.js",
     "dev-start": "nodemon --watch app --exec babel-node -- app/server.js",
-    "build": "babel app --out-dir dist --ignore *.scss,*.css,*.handlebars,*.jpg,*.jpeg,*.svg,*png",
+    "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,7 +20,13 @@
   },
   "homepage": "https://github.com/josephtball/Full-Stack-Portfolio#readme",
   "devDependencies": {
+    "css-loader": "^0.28.9",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.7.2",
     "nodemon": "^1.14.9",
+    "resolve-url-loader": "^2.2.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
     "webpack": "^3.10.0"
   },
   "dependencies": {
