@@ -21,9 +21,9 @@ form {
 			grid-template-columns: repeat(2, 1fr);
 			grid-column-gap: 1em;
 			grid-template-areas:
-			'name	email'
-			'message	message'
-			'	.	button';
+			'name email'
+			'message message'
+			'. button';
 
 			.name {
 				grid-area: name;
