@@ -4,7 +4,7 @@
 	position: fixed;
 	top: 0.45em;
 	left: 0.3em;
-	z-index: 999;
+	z-index: 99;
 
 	@include mq {
 		display: none;
@@ -48,7 +48,7 @@
 	top: 0;
 	left: 0;
 	background: $accent;
-	z-index: 998;
+	z-index: 98;
 	overflow: hidden;
 	clip-path: circle(0 at top left);
 	transition: clip-path ease-out 750ms;
